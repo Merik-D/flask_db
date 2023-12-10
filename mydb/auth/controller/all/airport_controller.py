@@ -21,7 +21,7 @@ class AirportController(GeneralController):
             abort(HTTPStatus.NOT_FOUND)
 
         response_data = []
-        for airport_icao, data in airportairports_flightss_airlines.items():
+        for airport_icao, data in airports_airlines.items():
             airlines_data = data.get("airlines", [])
 
             response_data.append({

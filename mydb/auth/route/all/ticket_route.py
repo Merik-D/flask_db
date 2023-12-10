@@ -38,3 +38,8 @@ def patch_ticket(ticket_id: int) -> Response:
 def delete_ticket(ticket_id: int) -> Response:
     ticket_controller.delete(ticket_id)
     return make_response("Ticket deleted", HTTPStatus.OK)
+
+
+@ticket_bp.get('/<string:aggregate_type>')
+def get_ticket_price_statistics(aggregate_type: str) -> Response:
+    return make_response(jsonify(ticket_controller.get_ticket_price_statistics(aggregate_type)), HTTPStatus.OK)
