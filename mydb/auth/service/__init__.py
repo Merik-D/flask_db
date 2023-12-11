@@ -5,6 +5,7 @@ from mydb.auth.service.all.connected_flight_service import ConnectedFlightServic
 from mydb.auth.service.all.flight_service import FlightService
 from mydb.auth.service.all.ticket_purchase_history_service import TicketPurchaseHistoryService
 from mydb.auth.service.all.ticket_service import TicketService
+from mydb.auth.service.all.user_additional_info_service import UserAdditionalInfoService
 from mydb.auth.service.all.user_service import UserService
 
 airline_service = AirlineService()
@@ -15,3 +16,4 @@ flight_service = FlightService()
 ticket_service = TicketService()
 ticket_purchase_history_service = TicketPurchaseHistoryService()
 user_service = UserService()
+user_additional_info_service = UserAdditionalInfoService()

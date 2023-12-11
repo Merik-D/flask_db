@@ -33,3 +33,6 @@ class AirlineController(GeneralController):
             })
         # print(response_data)
         return response_data
+
+    def link_airline_to_airport(self, airline_name, airport_ICAO):
+        return self._service.link_airline_to_airport(airline_name, airport_ICAO)

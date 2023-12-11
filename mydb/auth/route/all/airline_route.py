@@ -47,3 +47,13 @@ def get_airline_airports(airline_id: int)-> Response:
 @airline_bp.get('/airports')
 def get_all_airlines_with_airports() -> Response:
     return make_response(jsonify(airline_controller.find_all_airports_for_all_airlines()), HTTPStatus.OK)
+
+@airline_bp.post('/airports')
+def link_airline_to_airport() -> Response:
+    airline_name = request.json.get('airline_name')
+    airport_ICAO = request.json.get('airport_ICAO')
+
+    if not airline_name or not airport_ICAO:
+        return make_response(jsonify({'message': 'Missing required parameters'}), HTTPStatus.BAD_REQUEST)
+
+    return make_response(jsonify(airline_controller.link_airline_to_airport(airline_name, airport_ICAO), HTTPStatus.OK))

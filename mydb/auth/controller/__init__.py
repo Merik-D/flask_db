@@ -5,6 +5,7 @@ from mydb.auth.controller.all.connected_flight_controller import ConnectedFlight
 from mydb.auth.controller.all.flight_controller import FlightController
 from mydb.auth.controller.all.ticket_controller import TicketController
 from mydb.auth.controller.all.ticket_purchase_history_controller import TicketPurchaseHistoryController
+from mydb.auth.controller.all.user_additional_info_controller import UserAdditionalInfoController
 from mydb.auth.controller.all.user_controller import UserController
 
 airline_controller = AirlineController()
@@ -15,3 +16,4 @@ flight_controller = FlightController()
 ticket_controller = TicketController()
 ticket_purchase_history_controller = TicketPurchaseHistoryController()
 user_controller = UserController()
+user_additional_info_controller = UserAdditionalInfoController()

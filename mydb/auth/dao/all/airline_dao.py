@@ -1,3 +1,5 @@
+from sqlalchemy import text
+
 from mydb.auth.dao.general_dao import GeneralDAO
 from mydb.auth.domain.all.airline import Airline
 
@@ -27,4 +29,9 @@ class AirlineDao(GeneralDAO):
 
             return airlines_data
         return None
+
+    def link_airline_to_airport(self, airline_name, airport_ICAO):
+        sql_statement = text("CALL insert_airline_airport(:airline_name, :airport_ICAO)")
+        self._session.execute(sql_statement, {'airline_name': airline_name, 'airport_ICAO': airport_ICAO})
+        self._session.commit()
 
